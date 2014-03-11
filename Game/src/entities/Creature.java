@@ -44,7 +44,7 @@ public interface Creature
 	 * 
 	 * @return max mp of the creature
 	 */
-	public int getMAXMP();
+	public int getMaxMP();
 	
 	/**
 	 * 
