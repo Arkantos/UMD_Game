@@ -1,5 +1,7 @@
 package entities;
 
+import backend.ItemType;
+
 public interface Item 
 {
 	public String getItemID();
@@ -8,5 +10,6 @@ public interface Item
 	public String generateItemID();
 	
 	
+	public ItemType itemType();
 	
 }

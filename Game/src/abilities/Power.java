@@ -1,34 +1,54 @@
 package abilities;
 
+/**
+ * power can be passive or not
+ * 
+ * @author Michael
+ *
+ */
 public interface Power 
 {
-	public Elements getPrimaryElement();
+	/**
+	 * 
+	 * @return the element of the power
+	 */
+	public Elements getElement();
 	
-	public int getLevel();
-	public Elements getSecondaryElement();
-	
-	public double getStrengthModifier();
-	
-	public double[] getElementDamageModifier();
-	
+	/**
+	 * 
+	 * @return a flavorful description of the power
+	 * 
+	 */
 	public String getDescription();
 	
+	/**
+	 * 
+	 * @return the damage multiplier that the power has
+	 */
+	public int getDamage();
+	
+	/**
+	 * 
+	 * @return a description of the power
+	 */
 	public String toString();
-	
-	public int getMaxPower();
-	
-	public int computePrimaryDamage();
-	
-	public int computeSecondaryDamage();
-	
-	public double getDefenseModifier();
-	
-	public PowerType getPowerType();
-	
-	public boolean priority(Power p);
 
-	public int drainUse();
+	/**
+	 * 
+	 * @return the mana cost of the power
+	 */
+	public int drainMana();
 	
-	public int cooldown();
+	/**
+	 * 
+	 * @return a cooldown, if any
+	 */
+	public int cooldownTime();
+	
+	/**
+	 * 
+	 * @return the level needed to use the power
+	 */
+	public int levelReq();
 	
 }
