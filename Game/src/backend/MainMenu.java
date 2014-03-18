@@ -9,6 +9,13 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class MainMenu implements GameState {
 
+	public MainMenu() {
+		// TODO Auto-generated constructor stub
+	}
+	public MainMenu(int mainmenu) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void mouseClicked(int arg0, int arg1, int arg2, int arg3) {
 		// TODO Auto-generated method stub

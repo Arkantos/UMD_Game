@@ -1,4 +1,4 @@
-package backend;
+package entities;
 
 import java.util.TreeSet;
 

@@ -28,17 +28,17 @@ public class Application extends StateBasedGame {
     // Initialize your game states (calls init method of each gamestate, and set's the state ID)
     public void initStatesList(GameContainer gc) throws SlickException {
         // The first state added will be the one that is loaded first, when the application is launched
-    	/*
-    	this.addState(new SplashScreen(SPLASHSCREEN));
+    	
+    //	this.addState(new SplashScreen(SPLASHSCREEN));
         this.addState(new MainMenu(MAINMENU));
         this.addState(new Game(GAME));
-        */
+        
     }
 
     // Main Method
     public static void main(String[] args) {
         try {
-            AppGameContainer app = new AppGameContainer(new Application("My Game v" + VERSION));
+            AppGameContainer app = new AppGameContainer(new Application("Owl Saga v" + VERSION));
             app.setDisplayMode(WIDTH, HEIGHT, false);
             app.setTargetFrameRate(FPS);
             app.setShowFPS(true);

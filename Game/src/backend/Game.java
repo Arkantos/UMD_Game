@@ -9,6 +9,13 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Game implements GameState {
 
+	public Game() {
+		// TODO Auto-generated constructor stub
+	}
+	public Game(int game) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void mouseClicked(int button, int x, int y, int clickCount) {
 		// TODO Auto-generated method stub
