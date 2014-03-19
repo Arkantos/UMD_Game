@@ -12,6 +12,52 @@ public class PowerGem implements Power, Item {
 	private int cost;
 	private int cooldown;
 	private static int levelReq;
+	private final static ItemType GEMTYPE=ItemType.GEM;
+	
+	public String toString()
+	{
+		return "A powerful ELEMENTAL GEM";
+	}
+	public int getDamageMod() {
+		return damageMod;
+	}
+
+	public void setDamageMod(int damageMod) {
+		this.damageMod = damageMod;
+	}
+
+	public int getCost() {
+		return cost;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
+	public int getCooldown() {
+		return cooldown;
+	}
+
+	public void setCooldown(int cooldown) {
+		this.cooldown = cooldown;
+	}
+
+	public static int getLevelReq() {
+		return levelReq;
+	}
+
+	public static void setLevelReq(int levelReq) {
+		PowerGem.levelReq = levelReq;
+	}
+
+	public void setItemID(String itemID) {
+		this.itemID = itemID;
+	}
+
+	public void setElement(Elements element) {
+		this.element = element;
+	}
+
 	@Override
 	public String getItemID() {
 		// TODO Auto-generated method stub
@@ -29,7 +75,7 @@ public class PowerGem implements Power, Item {
 	public ItemType itemType() 
 	{
 		// TODO Auto-generated method stub
-		return ItemType.GEM;
+		return GEMTYPE;
 	}
 
 	@Override

@@ -29,7 +29,7 @@ public class Application extends StateBasedGame {
     public void initStatesList(GameContainer gc) throws SlickException {
         // The first state added will be the one that is loaded first, when the application is launched
     	
-    //	this.addState(new SplashScreen(SPLASHSCREEN));
+    	
         this.addState(new MainMenu(MAINMENU));
         this.addState(new Game(GAME));
         

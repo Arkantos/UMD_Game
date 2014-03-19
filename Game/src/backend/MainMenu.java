@@ -4,9 +4,10 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.state.GameState;
 import org.newdawn.slick.state.StateBasedGame;
-
+import org.newdawn.slick.geom.Shape;
 public class MainMenu implements GameState {
 
 	public MainMenu() {
@@ -17,9 +18,9 @@ public class MainMenu implements GameState {
 	}
 
 	@Override
-	public void mouseClicked(int arg0, int arg1, int arg2, int arg3) {
+	public void mouseClicked(int button, int x, int y, int clickCount) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -178,7 +179,9 @@ public class MainMenu implements GameState {
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		
+		
+		arg2.drawString("This is a test", 100, 100);
 
 	}
 
