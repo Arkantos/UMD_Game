@@ -8,13 +8,7 @@ public interface Creature
 	 */
 	public String getCreatureID();
 	
-	/**
-	 * generates an id for the creature based on level, name, max hp and mp, attack, and defense
-	 * meant for monsters and npcs
-	 * meant to only run once for a creature type, then be left alone
-	 * @return a generated id
-	 */
-	public String generateCreatureID();
+	
 	
 	/**
 	 * 
@@ -58,6 +52,8 @@ public interface Creature
 	 */
 	public int defendValue();
 	
+	
 	public Item[] getItems();
 	
+	public Inventory getInventory();
 }

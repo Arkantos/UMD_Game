@@ -4,7 +4,7 @@ import backend.*;
 import abilities.*;
 
 
-public class PowerGem implements Power, Item {
+public class PowerGem implements Power, Item<ItemType> {
 
 	private String itemID;
 	private Elements element;
@@ -112,6 +112,16 @@ public class PowerGem implements Power, Item {
 	public int levelReq() {
 		// TODO Auto-generated method stub
 		return levelReq;
+	}
+	@Override
+	public int itemLevel() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int itemValue() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

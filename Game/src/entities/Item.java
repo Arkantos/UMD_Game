@@ -2,7 +2,7 @@ package entities;
 
 import backend.ItemType;
 
-public interface Item 
+public interface Item<ItemType> 
 {
 	public String getItemID();
 	
@@ -11,5 +11,11 @@ public interface Item
 	
 	
 	public ItemType itemType();
+	
+	public int itemLevel();
+	
+	public int itemValue();
+	
+	
 	
 }

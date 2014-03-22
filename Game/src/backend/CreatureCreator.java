@@ -2,17 +2,30 @@ package backend;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
 import abilities.*;
+
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
+import entities.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class CreatureCreator extends JFrame {
 
@@ -25,10 +38,13 @@ public class CreatureCreator extends JFrame {
 	private JTextField mpText;
 	private JLabel lblDefenseElement;
 
+	private static int current_id=2;
+	private static ArrayList<Monster> monsters;
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		//readFile();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -133,11 +149,84 @@ public class CreatureCreator extends JFrame {
 		contentPane.add(btnAddMonster);
 		
 		JButton btnFinish = new JButton("Finish");
+		btnFinish.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				String name=nameText.getText();
+				
+				
+				
+				Monster m=new Monster();
+				
+				
+				
+				monsters.add(m);
+			}
+		});
 		btnFinish.setBounds(135, 421, 89, 23);
 		contentPane.add(btnFinish);
 		
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.setBounds(234, 421, 89, 23);
 		contentPane.add(btnQuit);
+	}
+	public static void readFile(){
+		File file=new File("monsters.dat");
+		FileInputStream fin;
+		ObjectInputStream in;
+		try {
+			fin = new FileInputStream(file);
+			 in=new ObjectInputStream(fin);
+			 int numMonsters=in.readInt();
+			 current_id=numMonsters+2;
+			 for(int i=0; i<numMonsters; i++){
+				 Monster m=(Monster)in.readObject();
+				 monsters.add(m);
+			 }
+			 
+			 
+			 
+			 in.close();
+			 fin.close();	 
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally{
+			
+		}
+		
+		
+	}
+	public void writeFile()
+	{
+		File file=new File("monsters.dat");
+		FileOutputStream fout;
+		ObjectOutputStream out;
+		
+		try {
+			fout=new FileOutputStream(file);
+			out=new ObjectOutputStream(fout);
+			out.writeObject(current_id-2);
+			out.flush();
+			for(int i=0; i<current_id-1; i++){
+				out.writeObject(monsters.get(i));
+				out.flush();
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }

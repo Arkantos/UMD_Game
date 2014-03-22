@@ -21,12 +21,7 @@ public class CreatureGenerator
 	
 	}
 	
-	private void make(String input)
-	{
-		//reads in input string, and creates a creature
-		//depending on the input, reads another file to get name and items
-		//returns the creature
-	}
+	
 	public Set generate()
 	{
 		//main method called by other classes
