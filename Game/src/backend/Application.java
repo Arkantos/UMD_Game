@@ -38,7 +38,7 @@ public class Application extends StateBasedGame {
     // Main Method
     public static void main(String[] args) {
         try {
-            AppGameContainer app = new AppGameContainer(new Application("Owl Saga v" + VERSION));
+            AppGameContainer app = new AppGameContainer(new Application("The Saga of the Owl King v" + VERSION));
             app.setDisplayMode(WIDTH, HEIGHT, false);
             app.setTargetFrameRate(FPS);
             app.setShowFPS(true);

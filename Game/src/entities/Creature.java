@@ -1,5 +1,7 @@
 package entities;
 
+import backend.Location;
+
 public interface Creature 
 {
 	/**
@@ -56,4 +58,8 @@ public interface Creature
 	public Item[] getItems();
 	
 	public Inventory getInventory();
+	
+	public Location getLocation();
+	
+	public Location moveBy(int x, int y);
 }

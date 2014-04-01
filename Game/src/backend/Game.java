@@ -1,19 +1,25 @@
 package backend;
-
+import entities.*;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.GameState;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.tiled.*;
 
 public class Game implements GameState {
 
+	private Player player;
+	//private arraylist levels
+	
+	
+	private int id;
 	public Game() {
-		// TODO Auto-generated constructor stub
+		id=2;
 	}
 	public Game(int game) {
-		// TODO Auto-generated constructor stub
+		id=game;
 	}
 
 	@Override

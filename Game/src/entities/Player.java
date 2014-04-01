@@ -1,5 +1,7 @@
 package entities;
 
+import backend.Location;
+
 public class Player implements Creature {
 
 	public int experience;
@@ -14,6 +16,7 @@ public class Player implements Creature {
 	public int MAX_MP;
 	public int attack;
 	public int defense;
+	private Location location;
 	
 	
 	@Override
@@ -75,7 +78,20 @@ public class Player implements Creature {
 	@Override
 	public Inventory getInventory() {
 		// TODO Auto-generated method stub
-		return null;
+		return inventory;
+	}
+
+
+	public Location getLocation()
+	{
+		return location;
+	}
+	@Override
+	public Location moveBy(int x, int y) {
+		int currX=location.getX(), currY=location.getY();
+		location.setX(currX+x);
+		location.setY(currY+y);
+		return location;
 	}
 
 }

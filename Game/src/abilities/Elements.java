@@ -6,7 +6,25 @@ package abilities;
  */
 public enum Elements 
 {
-	NULL, LIGHTNING, EARTH, VOID, FLAME, AIR, WATER, LIGHT, DARK, POISON
+	NONE, LIGHTNING, EARTH, VOID, FLAME, AIR, WATER, LIGHT, DARK, POISON;
 	
+	public Elements combine(Elements e)
+	{
+		Elements returnE=NONE;
+		switch(this)
+		{
+		case NONE:
+			returnE=e;
+			break;
+		case AIR:
+			break;
+		case EARTH:
+			break;
+			
+		
+		}
+		return returnE;
+	}
 	
 }
+

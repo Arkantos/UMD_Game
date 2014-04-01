@@ -1,5 +1,7 @@
 package entities;
 
+import backend.Location;
+
 public class Monster implements Creature {
 	private Inventory inventory;
 	private int level;
@@ -10,6 +12,7 @@ public class Monster implements Creature {
 	private int attack;
 	private int defense;
 	private String id;
+	private Location loc;
 	public void setLevel(int level) {
 		this.level = level;
 	}
@@ -100,6 +103,18 @@ public class Monster implements Creature {
 	public Inventory getInventory() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Location getLocation()
+	{
+		return loc;
+	}
+	@Override
+	public Location moveBy(int x, int y) {
+		int currX=loc.getX(), currY=loc.getY();
+		loc.setX(currX+x);
+		loc.setY(currY+y);
+		return loc;
 	}
 
 }

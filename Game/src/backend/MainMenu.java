@@ -4,23 +4,31 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.geom.Shape;
+
 import org.newdawn.slick.state.GameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.geom.Shape;
+
 public class MainMenu implements GameState {
 
+	private int state;
+	private StateBasedGame game; // stored for later use
 	public MainMenu() {
-		// TODO Auto-generated constructor stub
+		state=1;
 	}
 	public MainMenu(int mainmenu) {
 		// TODO Auto-generated constructor stub
+		state=mainmenu;
 	}
 
 	@Override
 	public void mouseClicked(int button, int x, int y, int clickCount) {
 		// TODO Auto-generated method stub
-		
+		if(button==1)
+		{
+			//if the location is over the button to start the game
+			
+		}
 	}
 
 	@Override
@@ -68,7 +76,7 @@ public class MainMenu implements GameState {
 	@Override
 	public boolean isAcceptingInput() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
@@ -84,9 +92,16 @@ public class MainMenu implements GameState {
 	}
 
 	@Override
-	public void keyReleased(int arg0, char arg1) {
-		// TODO Auto-generated method stub
-
+	public void keyReleased(int key, char c) 
+	{
+		/*
+		switch(key){
+		case Input.KEY_1:
+			game.enterState(2);
+			break;
+		}
+		*/
+		
 	}
 
 	@Override
@@ -162,27 +177,27 @@ public class MainMenu implements GameState {
 		return 0;
 	}
 
+	
+	
+	public void init(GameContainer container, StateBasedGame game) throws SlickException {
+		this.game = game;
+	}
+
 	@Override
-	public void init(GameContainer arg0, StateBasedGame arg1)
+	public void leave(GameContainer container, StateBasedGame game)
 			throws SlickException {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void leave(GameContainer arg0, StateBasedGame arg1)
-			throws SlickException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2)
+	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
 		
 		
-		arg2.drawString("This is a test", 100, 100);
-
+		g.drawString("The Saga of the Owl King", 100, 100);
+		g.drawString("1. Play Game", 100, 130);
+		//g.draw(null);
 	}
 
 	@Override
